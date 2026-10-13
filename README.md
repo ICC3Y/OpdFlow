@@ -34,6 +34,13 @@ In an Indian district hospital Outpatient Department (OPD), walk-in tokens follo
 
 ---
 
+## Solution Screen shots
+
+<img width="1919" height="1133" alt="image" src="https://github.com/user-attachments/assets/9e3a8797-1c3b-44ea-a682-26a874d98290" />
+<img width="1897" height="1121" alt="image" src="https://github.com/user-attachments/assets/1c8c5d85-d39c-41bd-b859-afc74833ec4b" />
+<img width="1898" height="1115" alt="image" src="https://github.com/user-attachments/assets/bd26fce7-9bf8-4f58-8902-904c082decde" />
+<img width="1901" height="1120" alt="image" src="https://github.com/user-attachments/assets/d3e8cb79-305f-4b1c-ab82-e4bffa6c33c3" />
+
 ## 🛠️ Local Development
 
 ```bash
