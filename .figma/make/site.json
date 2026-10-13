@@ -1,0 +1,11 @@
+{
+  "title": "OPD Flow — Smart Patient Prioritisation",
+  "description": "Streamlines patient intake and care coordination with role-based dashboards for clerks, nurses, doctors, and admins to enhance healthcare workflow efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,1 @@
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"the user is sending feedback: did u execute the build plan","additionalContext":"The user is sending feedback for your plan."}}

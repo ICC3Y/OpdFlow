@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* GOV.UK Frontend palette; token names kept so existing utilities map across */
+@theme {
+  --font-sans: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --color-canvas: #FFFFFF;
+  --color-ink: #0B0C0C;
+  --color-body: #505A5F;
+  --color-teal: #1D70B8;
+  --color-teal-dark: #003078;
+  --color-teal-light: #F3F2F1;
+  --color-line: #B1B4B6;
+  --color-surface: #FFFFFF;
+  --color-go: #00703C;
+  --color-go-dark: #005A30;
+  --color-focus: #FFDD00;
+  --color-sel: #1D70B8;
+  --color-p-immediate: #D62839;
+  --color-p-soon: #F4A300;
+  --color-p-routine: #1E8449;
+  --radius-md: 0px;
+  --radius-sm: 0px;
+}
+
+/* Inter replaces GDS Transport everywhere GOV.UK Frontend sets a font */
+body, [class*='govuk-'] {
+  font-family: var(--font-sans) !important;
+}
+body {
+  background: #FFFFFF;
+  color: #0B0C0C;
+  font-size: 16px;
+}
+
+/* GOV.UK focus state: yellow fill + black underline */
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid transparent;
+  background-color: #FFDD00 !important;
+  color: #0B0C0C !important;
+  box-shadow: 0 -2px #FFDD00, 0 4px #0B0C0C !important;
+  text-decoration: none;
+}
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #FFDD00 !important;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 2px #0B0C0C !important;
+}
+
+/* Inputs: 2px black border */
+input:not([type='checkbox']):not([type='radio']), textarea {
+  border: 2px solid #0B0C0C !important;
+  border-radius: 0 !important;
+}
+
+/* GOV.UK primary button shape on our action buttons */
+.bg-teal, .bg-go {
+  box-shadow: 0 2px 0 #002D18;
+}
+.bg-teal { background-color: #00703C !important; }
+.bg-teal:hover { background-color: #005A30 !important; }
+.disabled\:bg-line:disabled { box-shadow: none; background-color: #B1B4B6 !important; }
+.ring-teal { --tw-ring-color: #1D70B8; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(214, 40, 57, 0.55); }
+  70% { box-shadow: 0 0 0 10px rgba(214, 40, 57, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(214, 40, 57, 0); }
+}
+.pulse-alert { animation: pulse-ring 1.6s infinite; }
+
+/* Unacknowledged Immediate: solid red, white text, so it stands out from the queue */
+/* One shared clock on :root so every alert blinks in sync, whenever it mounted */
+@property --alert-bg { syntax: '<color>'; inherits: true; initial-value: #D62839; }
+:root { animation: alert-blink 1.2s ease-in-out infinite; }
+@keyframes alert-blink {
+  0%, 100% { --alert-bg: #D62839; }
+  50% { --alert-bg: #A51C2A; }
+}
+.alert-solid { background-color: var(--alert-bg); animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  :root { animation: none; }
+}
+.alert-solid, .alert-solid * { color: #FFFFFF !important; }
+.alert-solid:hover { background-color: #A51C2A; }
+.alert-solid .bg-teal-light { background-color: rgba(255, 255, 255, 0.2) !important; }
+.alert-solid .bg-ink { background-color: #0B0C0C !important; }
+.alert-solid .bg-teal { background-color: #FFFFFF !important; }
+.alert-solid .bg-teal, .alert-solid .bg-teal * { color: #0B0C0C !important; }
